@@ -1,8 +1,8 @@
-'use strict';
+// 'use strict';
 
 const helpers = module.exports;
 
-helpers.valueToString = function (value) {
+helpers.valueToString = function (value: number) : string {
     return String(value);
 };
 
