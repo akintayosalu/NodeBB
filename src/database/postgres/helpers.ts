@@ -13,13 +13,15 @@ const helpers: {
     removeDuplicateValues: function (): void {
         throw new Error('Function not implemented.');
     },
-    ensureLegacyObjectType: async function (): Promise<void> {
+    ensureLegacyObjectType: function (): Promise<void> {
         throw new Error('Function not implemented.');
     },
-    ensureLegacyObjectsType: async function (): Promise<void> {
+    ensureLegacyObjectsType: function (): Promise<void> {
         throw new Error('Function not implemented.');
     },
 };
+
+module.exports = helpers;
 
 interface QueryConfig<I extends any[] = any[]> {
     name?: string | undefined;

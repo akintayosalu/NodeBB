@@ -23,10 +23,8 @@ const helpers = {
     ensureLegacyObjectsType: function () {
         throw new Error('Function not implemented.');
     },
-    noop: function () {
-        throw new Error('Function not implemented.');
-    },
 };
+module.exports = helpers;
 helpers.valueToString = function (value) {
     return String(value);
 };
