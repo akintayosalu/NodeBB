@@ -118,17 +118,17 @@ SELECT "type"
         values: [key],
     }) as QueryResult<any>;
 
-    // The next line calls a field rows in a module that has not been updated to TS yet (db.query)
+    // The next line calls a field rows in a module that has not been updated to TS yet
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (res.rows[0].type !== type) {
-        // The next line calls a field rows in a module that has not been updated to TS yet (db.query)
+        // The next line calls a field rows in a module that has not been updated to TS yet
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         throw new Error(`database: cannot insert ${JSON.stringify(key)} as ${type} because it already exists as ${String(res.rows[0].type)}`);
     }
 };
 
 helpers.ensureLegacyObjectsType = async function (db, keys: string[], type: string) {
-    // The next line calls a function in a module that has not been updated to TS yet
+    // The next line calls a function in a module that has not been updated to TS yet (db.query)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     await db.query({
         name: 'ensureLegacyObjectTypeBefore',
@@ -138,7 +138,7 @@ DELETE FROM "legacy_object"
    AND "expireAt" <= CURRENT_TIMESTAMP`,
     });
 
-    // The next line calls a function in a module that has not been updated to TS yet
+    // The next line calls a function in a module that has not been updated to TS yet (db.query)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     await db.query({
         name: 'ensureLegacyObjectsType1',
@@ -151,7 +151,7 @@ SELECT k, $2::TEXT::LEGACY_OBJECT_TYPE
         values: [keys, type],
     });
 
-    // The next line calls a function in a module that has not been updated to TS yet
+    // The next line calls a function in a module that has not been updated to TS yet (db.query)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     const res: QueryResult<any> = await db.query({
         name: 'ensureLegacyObjectsType2',
