@@ -6,7 +6,6 @@ const helpers: {
     removeDuplicateValues: (values: string[], ...others:string[][]) => void;
     ensureLegacyObjectType: (db, key: string, type:string) => Promise<void>;
     ensureLegacyObjectsType: (db, keys: string[], type: string) => Promise<void>;
-    noop: () => void;
 } = {
     valueToString: function (): string {
         throw new Error('Function not implemented.');
@@ -14,13 +13,10 @@ const helpers: {
     removeDuplicateValues: function (): void {
         throw new Error('Function not implemented.');
     },
-    ensureLegacyObjectType: function (): Promise<void> {
+    ensureLegacyObjectType: async function (): Promise<void> {
         throw new Error('Function not implemented.');
     },
-    ensureLegacyObjectsType: function (): Promise<void> {
-        throw new Error('Function not implemented.');
-    },
-    noop: function (): void {
+    ensureLegacyObjectsType: async function (): Promise<void> {
         throw new Error('Function not implemented.');
     },
 };
